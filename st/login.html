@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+Авторизация
+
+{% endblock %}
+
+{% block buttons %}
+<div class="btn_block">
+                        <a style="margin-left: 80px"><a class="btn_hover" href="{{ url_for('login') }}">Вход</a></a>
+                        <a style=" margin-left: 20px"><a  class="btn_hover" href="{{ url_for('signup') }}">Регистрация</a></a></div>
+                </div>
+
+{% endblock %}
+{% block content %}
+
+<style>
+
+    .btn_hover:hover {
+        background: #ff1e00;
+        color: #fff;
+    }
+    .btn_hover{
+        color: #ff1e00;
+        text-decoration: none;
+        font-weight: 700;
+        border: 2px solid #ff1e00;
+        border-radius: 30px;
+        padding: 10px 25px;
+    }
+
+    *{
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    input {
+    background: transparent; /* Делает само поле ввода прозрачным */
+    border: none; /* Убираем рамки вокруг поля ввода */
+    border-bottom: 1px solid #444; /* Добавим нижнюю черту для красоты */
+    }
+    .space {
+    padding: 20px; /* Поля */
+    border-radius: 5%;
+    background: #e8f9fd; /* Цвет фона */
+     /* Параметры рамки */
+   }
+
+    .main {
+        background: #e8f9fd
+    }
+
+    </style>
+
+<body>
+<br><h3 class="title" style="text-align: center; margin-top: 5%; margin-bottom: 0"><b><font size="15">Авторизация</font></b></h3><br>
+<div class="column is-4 is-offset-4">
+
+    <div class="space main">
+    <font face="century gothic"><center>
+
+    <div class="box">
+        <form method="POST" action="/login">
+            <font size="5"><div class="field">
+                <div class="control">
+                    <input class="input is-large" type="email" name="email" placeholder="Email" autofocus="">
+
+                </div>
+            </div>
+                <p>
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="password" name="password" placeholder="Пароль">
+                </div>
+            </div></font>
+
+            <p style="color:#FF0000" > {{ err }}  </p>
+            <div class="field">
+                <label class="checkbox"  >
+                    <input name="checkbox" type="checkbox">
+                    Запомнить меня
+                </label>
+            </div>
+            <p></p>
+            <button class="btn btn_hover" style="">Войти</button><br>
+
+        </form>
+        <a href="{{ url_for('send') }}">Забыли пароль?</a>
+    </div>
+
+    </center></font>
+</div>
+</body>
+{% endblock %}

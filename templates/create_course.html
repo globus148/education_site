@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/create_course" method="post" name="section">
+
+    <div>
+        <input type="text" name="name_course" value="{{name_course}}" placeholder="Название курса">
+    </div>
+    <textarea name="desc_course" style="width:" placeholder="Описание курса">{{desc}}</textarea>
+    {% for i in range(kol) %}
+    <div>
+        <input type="text" name="name_lesson {{ i }}" value="{{ lessons[i] }}" placeholder="Введите название урока">
+    </div>
+    {% endfor %}
+    <div>
+        <button name="delete" value="Удалить урок">Удалить урок</button>
+        <div>
+            <button name="add" value="Добавить урок"> Добавить урок</button>
+        </div>
+    </div>
+
+    <div>
+        <button name="save" value="Save"> Сохранить курс</button>
+    </div>
+
+</form>
+</body>
+</html>

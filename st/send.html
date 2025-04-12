@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+<form action='/send' method="post" name="enter_email">
+    <div>
+  <input type="text" name="email" placeholder="Email-почта" value="{{email}}">
+    </div>
+    <div>
+        <input type="text" name="unic_code" placeholder="Введите уникальный код">
+    <input type="submit" name="send_code" value="Отправить код">
+</div>
+<p style="color:#FF0000" > {{ err }}  </p>
+          <input type="submit" name="Ok" value="Подтвердить">
+
+
+
+
+</form>
+</body>

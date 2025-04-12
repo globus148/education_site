@@ -1,0 +1,121 @@
+
+
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+Главная страница
+
+{% endblock %}
+
+
+{% block buttons %}
+<li style=""><a href="{{ url_for('profile') }}" style="color: #4E4E50; text-decoration: none;">Профиль</a></li>
+
+{% if r == 0 %}
+
+
+{% endif %}
+
+<!-- Bootstrap 4 -->
+<!--<div class="btn-group">-->
+<!--  &lt;!&ndash; Кнопка &ndash;&gt;-->
+<!--  <button type="button"  style="margin-left: 100px; margin-right: 25px" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  ><img  width="25px" height="25px" src="{{ url_for('static', filename='icons/icon1.png') }}">-->
+
+<!--  </button>-->
+  <!-- Меню -->
+<!--  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Действие 1</a>
+    <a class="dropdown-item" href="#">Действие 2</a>
+    <a class="dropdown-item" href="#">Действие 3</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Действие 4</a>
+  </div>-->
+
+       <div class="btn_block">
+            <a  style="margin-left: 25px"><img  width="25px" height="25px" src="{{ url_for('static', filename='icons/icon1.png') }}"
+            </a>
+       </div>
+
+{% if flag == False %}
+<div class="btn_block">
+                        <a style="margin-left: 80px"><a class="btn_hover" href="{{ url_for('login') }}">Вход</a></a>
+                        <a style=" margin-left: 20px"><a  class="btn_hover" href="{{ url_for('signup') }}">Регистрация</a></a></div>
+                </div>
+{% endif %}
+
+{% if flag == True %}
+<div class="btn_block">
+                        <a style="margin-left: 80px"><a class="btn_hover" href="{{ url_for('logout') }}">Выход</a></a>
+                </div>
+{% endif %}
+
+
+
+{% endblock %}
+
+
+{% block content %}
+<style>
+        .box {
+    padding: 20px; /* Поля */
+    border-radius: 5%;
+    background: #e8f9fd; /* Цвет фона */
+        *{
+        font-family: "Montserrat", sans-serif;
+
+        }
+    body {
+<!--    background: #e8f9fd;-->
+
+    text-align: center;
+    }
+    input {
+    background: transparent; /* Делает само поле ввода прозрачным */
+    border: none; /* Убираем рамки вокруг поля ввода */
+    border-bottom: 1px solid #444; /* Добавим нижнюю черту для красоты */
+    }
+    .box {
+    padding: 20px; /* Поля */
+    border-radius: 5%;
+    background: #ffff; /* Цвет фона */</style>
+<body >
+
+
+    <div class="download_wrap"
+             style="font-family: 'Montserrat', sans-serif;
+                line-height: 1.5;
+                background-size: cover;
+
+                padding: 220px 0 10px 0">
+<div class="column is-4 is-offset-4" >
+    <div class="box">
+        <div class="download"
+             style="color: #e8f9fd;
+                min-width: 320px;
+                padding: 0 70px;
+                box-sizing: border-box;
+                margin-bottom: 30px;
+margin-top: 30px;">
+
+            <h1 style="max-width: 1080px;
+                    font-weight: 700;
+                    font-size: 4rem;
+                    line-height: 2rem;
+                    margin-bottom: 35px;
+                    color: #ff1e00">Данный интернет-сайт —</h1>
+            <h2 style="max-width: 900px;
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                    line-height: 2.2rem;
+                    color: #4E4E50">удобный и эффективный инструмент для автоматизации взаимодействия сотрудников с компанией,
+                которая предоставляет услуги корпоративного питания. С помощью нашей платформы вы сможете заказывать еду,
+                выбирать меню, оплачивать заказы и отслеживать статус доставки в режиме онлайн.
+                Это позволит сократить время и упростить процесс заказа еды для вашей компании.</h2>
+        </div>
+    </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

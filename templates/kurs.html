@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> имя </p>
+<div>
+    <p> {{name}} </p>
+</div>
+<p>имена уроков</p>
+<div>
+    {% for i in names_lessons %}
+    <p> {{i}} </p>
+    {% endfor %}
+</div>
+<p> колво уроков:</p>
+<div>
+    <p> {{kol_lessons-1}} </p>
+</div>
+<p> количество позитивных отметок(стата) доработать </p>
+<div>
+    <p> {{kol_positive}} </p>
+</div>
+<p> количество плохтх отиеток, доработать</p>
+<div>
+    <p> {{kol_negative}} </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/entrance.css') }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="entrance.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="{{ url_for('index') }}">EdTech-направления</a>
+        </div>
+        <ul>
+            <li><a href="#">Наставникам</a></li>
+            <li><a href="#">Студентам</a></li>
+            {% if flag == False %}
+            <li><a href="{{ url_for('login') }}">Вход</a></li>
+             {% endif %}
+            <li><a href="{{ url_for('signup') }}">Регистрация</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="circle"></div>
+        <div class="register-form-container">
+            <form method="POST" action="/login">
+            <h1 class="form-title">Войти в аккаунт</h1>
+            <div class="form-fields">
+
+                    <div class="form-field">
+
+
+                        <input type="text" name="mail" placeholder="Почта">
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="password" placeholder="Пароль">
+                    </div>
+                    <div class="form-checkbox">
+                        <input class="b_1" name="rememder" type="checkbox">
+                        <p>Запомнить меня</p>
+                    </div>
+            </div>
+            <div class="form-buttons">
+                <button class="button">Вход</button>
+            </div>
+
+            <div class="form-remember">
+                <a href="{{ url_for('send') }}">Не помню пароль</a>
+            </div>
+            </form>
+        </div>
+
+    </main>
+</body>
+
+</html>

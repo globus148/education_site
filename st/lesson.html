@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    input.default {
+      background: white;
+      width: 23vw;
+      height: 80px;
+      font-size: 40pt;
+      transition: background 9999999s;
+
+    }
+
+    input.default:focus {
+        outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 10px #F5A016;
+    transition: 0.7s;
+}
+    input.default_update {
+      background: white;
+      width: 400px;
+      height: 23px;
+      font-size: 10pt;
+      transition: background 9999999s;
+    }
+  </style>
+
+</head>
+
+<body>
+    <table>
+        <tr tabindex="0">
+
+           <form action="/lesson" method="post" name="section">
+               {% if flag == 1 or flag == 0 %}
+                <td><input type="submit" style=" background: #F5A016" name="theory" class="default" value="Теория"></td>
+               {% else %}
+                <td><input type="submit" name="theory" class="default" value="Теория"></td>
+               {% endif %}
+
+               {% if flag == 2 %}
+                <td><input type="submit" style="background: #F5A016" name="video" class="default" value="Видео" ></td>
+               {% else %}
+                <td><input type="submit" name="video" class="default" value="Видео" ></td>
+               {% endif %}
+
+               {% if flag == 3 %}
+                <td><input type="submit" style="background: #F5A016" name="test" class="default" value="Тест" ></td>
+               {% else %}
+                <td><input type="submit" name="test" class="default" value="Тест" ></td>
+               {% endif %}
+
+               {% if flag == 4 %}
+                <td><input type="submit" style="background: #F5A016" name="practice" class="default" value="Практика"></td>
+               {% else %}
+                <td><input type="submit" name="practice" class="default" value="Практика"></td>
+               {% endif %}
+           </form>
+        </tr>
+      </table>
+{% if flag == 1 %}
+    <div style="overflow-y:auto; background: #F5A016;  border: 3px solid black; width: 92.5vw; height: 700px">
+ <p> Тут будет теория </p>
+        {%  for i in range(10) %}
+        <br>
+        {% endfor %}
+    </div>
+{% endif %}
+{% if flag == 2 %}
+ <div style="overflow-y:auto; background: #F5A016;  border: 3px solid black; width: 92.5vw; height: 700px">
+ <p> Тут будет видео </p>
+        {%  for i in range(10) %}
+        <br>
+        {% endfor %}
+    </div>
+{% endif %}
+{% if flag == 3 %}
+<div style="overflow-y:auto; background: #F5A016;  border: 3px solid black; width: 92.5vw; height: 700px">
+ <p> Тут будет тест </p>
+        {%  for i in range(10) %}
+        <br>
+        {% endfor %}
+    </div>
+{% endif %}
+{% if flag == 4 %}
+ <div style=" overflow-y:auto; background: #F5A016;  border: 3px solid black; width: 92.5vw; height: 700px">
+ <p> Тут будет практика </p>
+        {%  for i in range(10) %}
+        <br>
+        {% endfor %}
+    </div>
+{% endif %}
+<br>
+<form action="/update" method="post" name="update">
+
+          <input type="submit" name="update" class="default_update" value="Изменить содержание">
+
+</form>
+</body>
+</html>
